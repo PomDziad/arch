@@ -80,8 +80,6 @@ read user
 useradd --create-home $user &&
 passwd $user &&
 
-#włączanie lightdm
-echo "[Seat:*]
-greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
-systemctl enable lightdm && echo "Teraz zresetuj"
+systemctl enable NetworkManager.service
+echo "Teraz zresetuj"
 

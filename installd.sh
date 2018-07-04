@@ -44,29 +44,35 @@ echo " WYBIERZ ŚRODOWISKO GRAFICZNE(domyślnie=1):
  6) Cinnamon (niedodane) "
 read desktop
 case $desktop in
+
 "1") pacman -S --noconfirm lightdm lightdm-gtk-greeter lxde &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
+
 "2")  pacman -S --noconfirm lightdm lightdm-gtk-greeter xfce4 xfce4-goodies &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
+
 "3")  pacman -S --noconfirm lightdm lightdm-gtk-greeter mate mate-extra &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
+
 "4") echo "nic" ;;
 "5") echo "nic" ;;
 "6") echo "nic" ;;
+
 *) pacman -S --noconfirm lightdm lightdm-gtk-greeter lxde &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
+esac
 
 #dodawanie użytkownika (sudo ręcznie)
 echo "Wpisz nazwę użytkownika do stworzenia (małe litery): "

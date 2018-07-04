@@ -5,7 +5,7 @@ setfont Lat2-Terminus16.psfu.gz -m 8859-2 &&
 #Zgoda
 echo "[UWAGA]
 NAJPIERW TRZEBA PRZYGOTOWAĆ I ZAMONTOWAĆ PARTYCJE! 
-Wpisz 'nie', jeżeli NIE są zrobione, np. w cfdisk i ZAMONTOWANE."
+Wpisz 'tak', jeżeli są zrobione i ZAMONTOWANE."
 read zgoda
 case $zgoda in
 "tak") 

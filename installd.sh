@@ -17,7 +17,7 @@ grub-install --target=i386-pc /dev/sda &&
 grub-mkconfig -o /boot/grub/grub.cfg &&
 
 #podstawy środowiska
-pacman -S --noconfirm xorg ttf-dejavu sudo dialog &&
+pacman -S --noconfirm xorg ttf-dejavu sudo dialog networkmanager &&
 
 #Hasło admina
 echo "Wpisz hasło dla konta root"
@@ -45,19 +45,19 @@ echo " WYBIERZ ŚRODOWISKO GRAFICZNE(domyślnie=1):
 read desktop
 case $desktop in
 
-"1") pacman -S --noconfirm lightdm lightdm-gtk-greeter lxde &&
+"1") pacman -S --noconfirm lightdm lightdm-gtk-greeter lxde network-manager-applet &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
 
-"2")  pacman -S --noconfirm lightdm lightdm-gtk-greeter xfce4 xfce4-goodies &&
+"2")  pacman -S --noconfirm lightdm lightdm-gtk-greeter xfce4 xfce4-goodies network-manager-applet &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&
 systemctl enable lightdm ;;
 
-"3")  pacman -S --noconfirm lightdm lightdm-gtk-greeter mate mate-extra &&
+"3")  pacman -S --noconfirm lightdm lightdm-gtk-greeter mate mate-extra network-manager-applet &&
  echo "kopiowanie configu lightdm" && 
  echo "[Seat:*]
 greeter-session=lightdm-gtk-greeter" > /etc/lightdm/lightdm.conf.d &&

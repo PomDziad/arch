@@ -17,7 +17,7 @@ grub-install --target=i386-pc /dev/sda &&
 grub-mkconfig -o /boot/grub/grub.cfg &&
 
 #podstawy środowiska
-pacman -S --noconfirm xorg ttf-dejavu lxde sudo dialog &&
+pacman -S --noconfirm xorg ttf-dejavu sudo dialog &&
 
 #Hasło admina
 echo "Wpisz hasło dla konta root"
